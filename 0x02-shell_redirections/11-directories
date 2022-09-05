@@ -1,0 +1,2 @@
+!#/bin/bash
+find . type d -out -name '.' | wc -l
