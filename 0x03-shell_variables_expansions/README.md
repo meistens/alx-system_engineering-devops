@@ -1,0 +1,1 @@
+shell redirections using aliases, variables and arithmetics
