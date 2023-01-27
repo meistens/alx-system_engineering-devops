@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#script kills script 4 process
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+if [ -n "$pid" ]
+then
+    kill -15 "$pid"
+fi
