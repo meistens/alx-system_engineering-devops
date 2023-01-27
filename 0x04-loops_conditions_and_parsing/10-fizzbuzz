@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#displays numbers from 1 to 100 via fizzbuzz
+for num in {1..100}
+do
+    if [ $((num % 5)) -eq 0 ] && [ $((num % 3)) -eq 0 ]
+    then
+	echo "FIzzbuzz"
+    elif [ $((num % 5)) -eq 0 ]
+    then
+	echo "Buzz"
+    elif [ $((num % 3)) -eq 0 ]
+    then
+	echo "Fizz"
+    else
+	echo "$num"
+    fi
+done
