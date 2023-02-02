@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to listen to a connection on port 98 (modify as you wish)
+
+nc -l 98
