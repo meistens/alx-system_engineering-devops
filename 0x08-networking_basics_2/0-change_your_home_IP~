@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script that configures an Ubuntu server (DO NOT USE ON MAIN MACHINE!!!)
+
+echo
