@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# script transfers a file to a remote server
+
+# store the arguments for readability
+PATH_TO_FILE=$1
+IP=$2
+USERNAME=$3
+PATH_TO_SSH_KEY=$4
+
+# checks if the variables are less than 4
+if [ $# -lt 3 ]; then
+   echo 'Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY'
+   exit
+fi
+
+# scp command to run
+scp -o "StrictHostKeyChecking=no" -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP:~/"
+
+echo "Running command: scp -o \"StrictHostKeyChecking no\" -i $PATH_TO_SSH_KEY $PATH_TO_FILE $USERNAME@$IP:~/"
