@@ -14,6 +14,8 @@ if [ $# -lt 3 ]; then
 fi
 
 # scp command to run
+# script returns isssues but command works when run separately, no idea what to
+# do
 scp -o "StrictHostKeyChecking=no" -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP:~/"
 
 echo "Running command: scp -o \"StrictHostKeyChecking no\" -i $PATH_TO_SSH_KEY $PATH_TO_FILE $USERNAME@$IP:~/"
