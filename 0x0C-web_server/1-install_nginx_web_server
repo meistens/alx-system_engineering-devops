@@ -1,27 +1,22 @@
 #!/usr/bin/env bash
 
 # script installs nginx in an ubuntu web server and configures its virtualhost
+# proper guide here: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
 
 # updates packages
 # sudo apt-get update
+
+# installs nginx and deps/packages needed
 sudo apt-get install nginx -y
 
-# nginx server block configuration to serve on localhost(till domain is used...)
-# but first, copy original configuration elsewhere if you screw things up
+# it is enabled by default if installed, but still nice to doubleconfirm...
+sudo ufw allow 'Nginx HTTP'
 
-sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default_copy
+# create html file first
+echo 'Hello World!' > index.html
 
-echo 'server {
-     listen 80 default_server;
-     listen [::]:80 default_server;
+# move to the www/html directory
+sudo mv index.html  /var/www/html
 
-     root /var/www/html;
-     index index.html;
-     
-     location / {
-     	      return 200 "Hello World!";
-	      }
-}' | sudo tee /etc/nginx/sites-available/default > /dev/null
-
-# restart nginx without systemctl. systemctl for RHEL-based repos not using VMs
+# restart nginx (ubuntu vm)
 sudo service nginx restart
