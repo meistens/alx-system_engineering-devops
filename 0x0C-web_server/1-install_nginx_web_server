@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
 # script installs nginx in an ubuntu web server and configures its virtualhost
+
 # proper guide here: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
 
 # updates packages
