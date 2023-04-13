@@ -4,7 +4,7 @@
 # proper guide here: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
 
 # updates packages
-# sudo apt-get update
+sudo apt-get update -y
 
 # installs nginx and deps/packages needed
 sudo apt-get install nginx -y
