@@ -35,13 +35,7 @@ sudo sed -i "/listen \[::\]:80 default_server;/a \
 		 }" /etc/nginx/sites-available/default
 
 # write 404 directive using sed
-sudo sed -i "/listen \[::\]:80 default_server;/a \
-\
-	error_page 404 /404.html;\
-	location = /404.html {\
-		 internal;\
-		 return 404;\
-		 }" /etc/nginx/sites-available/default
+sudo sed -i "/server_name _; /a\\\terror_page 404 /404.html;" /etc/nginx/sites-available/default
 
 # restart nginx (ubuntu vm)
 sudo service nginx restart
