@@ -40,7 +40,7 @@ sudo sed -i "/listen \[::\]:80 default_server;/a \
 	error_page 404 /404.html;\
 	location = /404.html {\
 		 internal;\
-		 return 404;\
+		 root /var/www/html;\
 		 }" /etc/nginx/sites-available/default
 
 # restart nginx (ubuntu vm)
