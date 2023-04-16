@@ -47,6 +47,7 @@ file { '/etc/nginx/sites-available/default':
       internal;
       root /var/www/html;
 }
+}
 ",
 }
 
