@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+# script configures ufw firewall for Ubuntu, disables all incoming traffic except 3
+sudo ufw status
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw allow ssh
+sudo ufw allow https
+sudo ufw allow http
+sudo ufw status
+sudo ufw reload
