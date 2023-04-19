@@ -8,4 +8,3 @@ sudo nginx -t
 sudo sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 sudo service nginx restart
 sudo netstat -tlnp | grep nginx
-nc -vz localhost 80
