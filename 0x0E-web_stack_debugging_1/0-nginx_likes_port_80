@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 # script checks nginx status and allows allconnections to listen on port 80
-sudo service nginx status
 sudo service nginx start
-sudo apt-get install netcat-openbsd -y
-sudo netstat -tlnp | grep nginx
-sudo nginx -t
 sudo sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo netstat -tlnp | grep nginx
-curl 0:80
