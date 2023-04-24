@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """script uses JSONPlaceholder api to fetch data based on their id
 and exports to a csv file"""
+import csv
 import requests
 import sys
-import csv
 
 if __name__ == "__main__":
     employee_id = sys.argv[1]
