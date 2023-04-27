@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # script basically configures another server to be the same as it is for using nginx
 
 # updates packages
