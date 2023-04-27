@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# script basically configures another server to be the same as it is for using nginx
+
+# updates packages
+# sudo apt-get update
+
+# installs nginx and deps/packages needed
+sudo apt-get install nginx -y
+
+# it is enabled by default if installed, but still nice to doubleconfirm...
+sudo ufw allow 'Nginx HTTP'
+
+# create html file first
+echo 'Hello World!' > index.html
+
+# move to the www/html directory
+sudo mv index.html  /var/www/html
+
+# custom http header, server_tokens disabled due to security risk
+# its not even a real server, but best time to be security-conscious
+
+sudo sed -i 's/# server_tokens off;/add_header X-Served-By $hostname;\n\n# server_tokens off;/' /etc/nginx/sites-available/default
+
+# restart nginx (ubuntu vm)
+sudo service nginx restart
