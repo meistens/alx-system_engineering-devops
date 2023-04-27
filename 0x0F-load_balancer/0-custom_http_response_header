@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # script basically configures another server to be the same as it is for using nginx
 
+header_value="$HOSTNAME"
+
 # updates packages
-# sudo apt-get update
+sudo apt-get update -y
 
 # installs nginx and deps/packages needed
 sudo apt-get install nginx -y
@@ -16,8 +18,10 @@ echo 'Hello World!' > index.html
 # move to the www/html directory
 sudo mv index.html  /var/www/html
 
-# custom http header
-sudo sed -i "/server_name _;/a\\\tadd_header X-Served-By \"\$HOSTNAME\";" /etc/nginx/sites-available/default
+# Use sed to add the custom header to the Nginx configuration file
+# handles cases where server_tokens off does not exist
+sudo sed -i "/http {/a \    server_tokens off;" /etc/nginx/nginx.conf
+sudo sed -i "/server_tokens off;/a \    add_header X-Served-By $header_value;" /etc/nginx/nginx.conf
 
 # restart nginx (ubuntu vm)
 sudo service nginx restart
