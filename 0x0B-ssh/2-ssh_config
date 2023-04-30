@@ -1,6 +1,0 @@
-# ssh configuration for ALX, this host is for learning purposes only
-Host 158373-web-01
-        IdentityFile ~/.ssh/school
-        PubkeyAuthentication yes
-        PasswordAuthentication no
-        HasKnownHosts yes

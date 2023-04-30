@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# script for logging into a server (this one is an assigned server)
-ssh -i ~/.ssh/school ubuntu@54.234.35.168
