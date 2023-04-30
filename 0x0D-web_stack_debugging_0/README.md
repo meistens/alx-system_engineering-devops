@@ -1,1 +1,0 @@
-# Debugging Docker with Apache
